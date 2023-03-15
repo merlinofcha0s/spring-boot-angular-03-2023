@@ -13,8 +13,16 @@ import java.util.UUID;
 @Table(name = "author")
 public class Author {
 
+    public Author() {
+    }
+
+    public Author(String name, LocalDate birthDate) {
+        this.name = name;
+        this.birthDate = birthDate;
+    }
+
     @Id
-    @Column(name = "id", nullable = false)
+    @Column(name = "id", nullable = false, columnDefinition = "uuid")
     @GeneratedValue
     private UUID id;
 

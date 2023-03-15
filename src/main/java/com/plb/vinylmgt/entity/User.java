@@ -7,8 +7,18 @@ import java.util.*;
 @Table(name = "vinyl_user")
 public class User {
 
+    public User() {
+    }
+
+    public User(String email, String password, String firstname, String lastname) {
+        this.email = email;
+        this.password = password;
+        this.firstname = firstname;
+        this.lastname = lastname;
+    }
+
     @Id
-    @Column(name = "id", nullable = false)
+    @Column(name = "id", nullable = false, columnDefinition = "uuid")
     @GeneratedValue
     private UUID id;
 

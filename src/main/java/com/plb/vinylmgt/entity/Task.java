@@ -16,7 +16,7 @@ public class Task {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @Column(name = "id", nullable = false)
+    @Column(name = "id", nullable = false, columnDefinition = "uuid")
     @GeneratedValue
     private UUID id;
 

@@ -14,7 +14,7 @@ import java.util.UUID;
 public class Job {
 
     @Id
-    @Column(name = "id", nullable = false)
+    @Column(name = "id", nullable = false, columnDefinition = "uuid")
     @GeneratedValue
     private UUID id;
 
