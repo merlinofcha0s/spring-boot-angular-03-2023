@@ -94,7 +94,7 @@ public class VinylResourceIT {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.[*].songName")
                         .value(hasItems(vinyl.getSongName(), secondVinyl.getSongName())))
-                .andExpect(jsonPath("$.[*].releaseddddDate")
+                .andExpect(jsonPath("$.[*].releaseDate")
                         .value(hasItems(vinyl.getReleaseDate().toString(),
                                 secondVinyl.getReleaseDate().toString())));
     }
