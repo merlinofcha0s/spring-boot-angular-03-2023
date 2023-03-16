@@ -3,6 +3,10 @@ package com.plb.vinylmgt.entity;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.time.LocalDate;
 import java.util.Objects;
 import java.util.UUID;
@@ -27,6 +31,7 @@ public class Vinyl {
     private UUID id;
 
     @Column(name = "song_name", nullable = false)
+    @NotNull(message = "Song name is mandatory, please provide one")
     private String songName;
 
     @Column(name = "release_date")
