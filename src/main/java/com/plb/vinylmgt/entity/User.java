@@ -1,5 +1,7 @@
 package com.plb.vinylmgt.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.*;
 
@@ -35,6 +37,7 @@ public class User {
     private String lastname;
 
     @OneToMany(mappedBy = "user")
+    @JsonIgnore
     private Set<Vinyl> vinyls = new HashSet<>();
 
     public UUID getId() {

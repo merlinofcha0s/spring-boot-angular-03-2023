@@ -1,5 +1,6 @@
 package com.plb.vinylmgt.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.MetaValue;
 
 import javax.persistence.*;
@@ -36,6 +37,7 @@ public class Author {
     private LocalDate birthDate;
 
     @OneToMany(mappedBy = "author")
+    @JsonIgnore
     private Set<Vinyl> vinyls = new HashSet<>();
 
     public UUID getId() {
